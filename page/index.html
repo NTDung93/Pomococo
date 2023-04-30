@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomococo</title>
+    <script
+      src="https://kit.fontawesome.com/a3de20d275.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="/img/work.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header__left">
+          <p>Pomococo</p>
+          <p>By Ntd93</p>
+        </div>
+        <div class="header__right">
+          <i class="fa-solid fa-gear"></i>
+          <i class="fa-regular fa-circle-user"></i>
+        </div>
+      </div>
+      <div class="pomodoro-container">
+        <div class="pomo_action">
+          <div class="pomo_action__choice actived pomo">pomodoro</div>
+          <div class="pomo_action__choice shortBreak">short break</div>
+          <div class="pomo_action__choice longBreak">long break</div>
+        </div>
+        <div class="pomo_timer">
+          <p class="minutes"></p>
+          <p class="dot">:</p>
+          <p class="seconds"></p>
+        </div>
+        <div class="pomo_func">
+          <div class="start">
+            <i onclick="start()" class="fa-regular fa-circle-play"></i>
+            <i
+              onclick="pause()"
+              class="fa-regular fa-circle-pause"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="restart">
+            <i
+              class="fa-solid fa-rotate-left"
+              onclick="rotate(this), restart()"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/2rcMRS9fDOnuu5YUTXAcQZ?utm_source=generator&theme=0"
+          height="80"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <!-- <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/5vwNi0Km340HsC5UfwaaIa?utm_source=generator&theme=0"
+          width="20%"
+          height="80"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe> -->
+
+        <!-- chill, lofi girl study -->
+        <!-- <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/1JLw7Y5YvlsA10XjaKHTxE?utm_source=generator&theme=0"
+          width="20%"
+          height="80"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe> -->
+      </div>
+    </div>
+
+    <script src="/js/style.js"></script>
+  </body>
+</html>

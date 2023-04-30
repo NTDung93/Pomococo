@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.actived {
+  background-color: white;
+  color: black;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url(/img/forest-nature-scenery-4k-wallpaper-uhdpaper.com-563@0@f.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  padding: 0 3rem;
+  justify-content: space-between;
+}
+.container .header__left {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container .header__left p {
+  color: white;
+  font-family: "Pacifico", cursive;
+}
+.container .header__left p:first-child {
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+.container .header__left p:nth-child(2) {
+  transform: translateY(-1.3rem);
+  cursor: pointer;
+}
+.container .header__right {
+  display: flex;
+  align-items: center;
+}
+.container .header__right i {
+  font-size: 2rem;
+  color: white;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.container .pomodoro-container {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+}
+.container .pomodoro-container .pomo_action {
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .pomodoro-container .pomo_action__choice {
+  border-radius: 2rem;
+  border: 0.1rem solid white;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.container .pomodoro-container .pomo_action__choice:hover {
+  background-color: white;
+  color: black;
+}
+.container .pomodoro-container .pomo_timer {
+  display: flex;
+  font-size: 9rem;
+  width: 30%;
+  justify-content: space-around;
+}
+.container .pomodoro-container .pomo_timer .minutes {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+.container .pomodoro-container .pomo_timer .dot {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+}
+.container .pomodoro-container .pomo_timer .seconds {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+.container .pomodoro-container .pomo_func {
+  display: flex;
+}
+.container .pomodoro-container .pomo_func i {
+  font-size: 3rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+.container .pomodoro-container .pomo_func .start i {
+  transition: all 0.4s;
+}
+.container .pomodoro-container .pomo_func .start i:hover {
+  color: black;
+}
+.container .pomodoro-container .pomo_func .restart i {
+  transition: all 0.4s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-name: none;
+}
+.container .pomodoro-container .pomo_func .restart i:hover {
+  color: black;
+}
+.container .footer {
+  width: 100%;
+  height: 20%;
+  padding: 0 3rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@media screen and (max-width: 1350px) {
+  .container .pomodoro-container .pomo_action {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .container .pomodoro-container .pomo_timer {
+    width: 40%;
+    font-size: 9rem;
+  }
+}
+@media screen and (max-width: 1190px) {
+  .container .pomodoro-container .pomo_action {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 955px) {
+  .container .pomodoro-container .pomo_action {
+    width: 60%;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 50%;
+    font-size: 9rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container .pomodoro-container .pomo_action {
+    width: 70%;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 60%;
+    font-size: 9rem;
+  }
+}
+@media screen and (max-width: 690px) {
+  .container .pomodoro-container .pomo_action {
+    width: 70%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.9rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 60%;
+    font-size: 8rem;
+  }
+  iframe {
+    width: 15.625rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .container .pomodoro-container .pomo_action {
+    width: 75%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.8rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 60%;
+    font-size: 7rem;
+  }
+  .container .pomodoro-container .pomo_func i {
+    font-size: 2.5rem;
+  }
+  .container .header__left p:first-child {
+    font-size: 3rem;
+  }
+  .container .header__left p:nth-child(2) {
+    font-size: 1rem;
+  }
+  .container .header__right i {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container .pomodoro-container .pomo_action {
+    width: 75%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.7rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 60%;
+    font-size: 6.5rem;
+  }
+  .container .pomodoro-container .pomo_func i {
+    font-size: 2rem;
+  }
+  .container .header__left p:first-child {
+    font-size: 2.5rem;
+  }
+  .container .header__left p:nth-child(2) {
+    font-size: 0.7rem;
+  }
+  .container .header__right i {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 460px) {
+  .container .pomodoro-container .pomo_action {
+    width: 80%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.7rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 65%;
+    font-size: 6.5rem;
+  }
+  .container .header {
+    padding: 0 2rem;
+  }
+  .container .footer {
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .container .pomodoro-container .pomo_action {
+    width: 75%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 65%;
+    font-size: 6rem;
+  }
+  .container .header {
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 405px) {
+  .container .pomodoro-container .pomo_action {
+    width: 80%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 70%;
+    font-size: 6rem;
+  }
+  .container .header {
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .pomodoro-container .pomo_action {
+    width: 85%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 75%;
+    font-size: 5.5rem;
+  }
+  .container .header {
+    padding: 0 1rem;
+  }
+  .container .pomodoro-container .pomo_func i {
+    font-size: 1.7rem;
+  }
+  .container .footer {
+    padding: 0 1rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .container .pomodoro-container .pomo_action {
+    width: 85%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 70%;
+    font-size: 5rem;
+  }
+  .container .header__left p:first-child {
+    font-size: 2rem;
+  }
+  .container .header__left p:nth-child(2) {
+    font-size: 0.6rem;
+    transform: translateY(-0.7rem);
+  }
+}
+@media screen and (max-width: 280px) {
+  .container .pomodoro-container .pomo_action {
+    width: 90%;
+  }
+  .container .pomodoro-container .pomo_action__choice {
+    font-size: 0.6rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .container .pomodoro-container .pomo_timer {
+    width: 70%;
+    font-size: 4rem;
+  }
+  .container .header {
+    padding: 0 0.6rem;
+  }
+  .container .pomodoro-container .pomo_func i {
+    font-size: 1.5rem;
+  }
+  .container .header__left p:first-child {
+    font-size: 1.8rem;
+  }
+  .container .header__left p:nth-child(2) {
+    font-size: 0.6rem;
+    transform: translateY(-0.7rem);
+  }
+  .container .header__right i {
+    font-size: 1.3rem;
+  }
+}/*# sourceMappingURL=style.css.map */
