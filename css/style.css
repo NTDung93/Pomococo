@@ -145,7 +145,6 @@ body {
 }
 
 .bg-wrapper {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -156,6 +155,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 .bg-wrapper .popUp {
   width: 30%;
