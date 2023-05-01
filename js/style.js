@@ -1,3 +1,25 @@
+//initialize
+const minuteDisplay = document.querySelector(".minutes")
+const secondDisplay = document.querySelector(".seconds")
+let initial = 1
+let pomodoro = initial
+
+let initialShort = 5
+let shortBreak = initialShort
+
+let initialLong = 10
+let longBreak = initialLong
+
+let seconds = "00"
+let runTime
+let paused = false
+let cntClickedPomo = 0
+let cntClickedShort = 0
+let cntClickedLong = 0
+
+let choicState = 1
+
+
 //rotate the icon restart each time click
 function rotate(icon) {
     icon.style.animationName = "spin"
@@ -33,26 +55,6 @@ function removeActived() {
 }
 
 //handle the timer
-const minuteDisplay = document.querySelector(".minutes")
-const secondDisplay = document.querySelector(".seconds")
-let initial = 30
-let pomodoro = initial
-
-let initialShort = 5
-let shortBreak = initialShort
-
-let initialLong = 10
-let longBreak = initialLong
-
-let seconds = "00"
-let runTime
-let paused = false
-let cntClickedPomo = 0
-let cntClickedShort = 0
-let cntClickedLong = 0
-
-let choicState = 1
-
 function displayTime(choice) {
     if (choice < 10) {
         minuteDisplay.innerHTML = "0" + choice
@@ -122,10 +124,20 @@ function countDown(choice) {
     }
 
     if (choice < 0) {
-        alert("Congratulations!")
+        showPopUp(choice)
         clearInterval(runTime)
         restart()
     }
+}
+
+function showPopUp(choice) {
+    document.querySelector(".pomodoro-container").style.display = "none"
+    document.querySelector(".bg-wrapper").style.display = "flex"
+}
+
+function closePopUp() {
+    document.querySelector(".bg-wrapper").style.display = "none"
+    document.querySelector(".pomodoro-container").style.display = "flex"
 }
 
 function pause() {

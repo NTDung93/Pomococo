@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Great+Vibes&family=Pacifico&family=Playball&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sacramento&family=Space+Grotesk:wght@300;400;500;600;700&family=Yellowtail&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -144,12 +144,99 @@ body {
   padding: 0 3rem;
 }
 
+.bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-wrapper .popUp {
+  width: 30%;
+  padding: 14.5em 2em;
+  height: 60%;
+  background-color: white;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.bg-wrapper .popUp .message {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 1.7em;
+  margin-bottom: 1em;
+}
+.bg-wrapper .popUp .btn-ok {
+  width: 100%;
+}
+.bg-wrapper .popUp .btn-ok .button-29 {
+  width: 100%;
+  align-items: center;
+  appearance: none;
+  background-color: #08c18a;
+  border: 0;
+  border-radius: 0.5em;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 1.5em;
+}
+.bg-wrapper .popUp .btn-ok .button-29:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #0c8552 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.bg-wrapper .popUp .btn-ok .button-29:active {
+  box-shadow: #0a942d 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(-360deg);
+  }
+}
+@media screen and (max-width: 1460px) {
+  .bg-wrapper .popUp .message {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 1315px) {
+  .bg-wrapper .popUp .message {
+    font-size: 1.2em;
+  }
+  .bg-wrapper .popUp .btn-ok {
+    font-size: 0.8em;
+  }
+  .bg-wrapper .popUp {
+    padding: 13em 2em;
   }
 }
 @media screen and (max-width: 1350px) {
@@ -168,6 +255,36 @@ body {
     width: 50%;
   }
 }
+@media screen and (max-width: 1095px) {
+  .bg-wrapper .popUp .message {
+    font-size: 1.1em;
+  }
+  .bg-wrapper .popUp .btn-ok {
+    font-size: 0.7em;
+  }
+  .bg-wrapper .popUp {
+    padding: 11em 2em 12em 2em;
+  }
+  .bg-wrapper .popUp .animation-gif lord-icon {
+    width: 205px;
+    height: 210px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .bg-wrapper .popUp .message {
+    font-size: 1em;
+  }
+  .bg-wrapper .popUp .btn-ok {
+    font-size: 0.6em;
+  }
+  .bg-wrapper .popUp {
+    padding: 11em 2em 11.5em 2em;
+  }
+  .bg-wrapper .popUp .animation-gif lord-icon {
+    width: 200px;
+    height: 205px;
+  }
+}
 @media screen and (max-width: 955px) {
   .container .pomodoro-container .pomo_action {
     width: 60%;
@@ -177,6 +294,25 @@ body {
     font-size: 9rem;
   }
 }
+@media screen and (max-width: 947px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.8em;
+  }
+  .bg-wrapper .popUp .btn-ok {
+    font-size: 0.6em;
+  }
+  .bg-wrapper .popUp {
+    padding: 2em 1em;
+    height: 55%;
+  }
+  .bg-wrapper .popUp .animation-gif lord-icon {
+    width: 170px !important;
+    height: 200px !important;
+  }
+  .bg-wrapper .popUp .btn-ok .button-29 {
+    height: 40px;
+  }
+}
 @media screen and (max-width: 800px) {
   .container .pomodoro-container .pomo_action {
     width: 70%;
@@ -184,6 +320,53 @@ body {
   .container .pomodoro-container .pomo_timer {
     width: 60%;
     font-size: 9rem;
+  }
+  .bg-wrapper .popUp .message {
+    font-size: 0.75em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp .btn-ok {
+    font-size: 0.5em;
+  }
+  .bg-wrapper .popUp {
+    padding: 0.5rem 1rem;
+    height: 45%;
+    border-radius: 1em;
+  }
+  .bg-wrapper .popUp .animation-gif lord-icon {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .bg-wrapper .popUp .btn-ok .button-29 {
+    height: 35px;
+  }
+}
+@media screen and (max-width: 765px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.75em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp .btn-ok {
+    font-size: 0.5em;
+  }
+  .bg-wrapper .popUp {
+    padding: 0 1em;
+    height: 43%;
+    border-radius: 1em;
+  }
+  .bg-wrapper .popUp .animation-gif lord-icon {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}
+@media screen and (max-width: 676px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.7em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    padding: 0 1em;
+    height: 40%;
   }
 }
 @media screen and (max-width: 690px) {
@@ -199,6 +382,16 @@ body {
   }
   iframe {
     width: 15.625rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.6em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    padding: 0.1rem 1.2rem;
+    height: 40%;
   }
 }
 @media screen and (max-width: 580px) {
@@ -225,6 +418,29 @@ body {
     font-size: 1.7rem;
   }
 }
+@media screen and (max-width: 570px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.65em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    width: 35%;
+    padding: 0.1rem 1.2rem;
+    height: 40%;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 520px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.62em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    width: 35%;
+    padding: 0.1rem 1.2rem;
+    height: 40%;
+  }
+}
 @media screen and (max-width: 500px) {
   .container .pomodoro-container .pomo_action {
     width: 75%;
@@ -247,6 +463,32 @@ body {
   }
   .container .header__right i {
     font-size: 1.5rem;
+  }
+  .bg-wrapper .popUp .message {
+    font-size: 0.6em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    width: 35%;
+    padding: 0 1.2rem;
+    height: 38%;
+  }
+  .bg-wrapper .popUp .btn-ok .button-29 {
+    height: 30px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .bg-wrapper .popUp .message {
+    font-size: 0.7em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    width: 45%;
+    padding: 0 1.2rem;
+    height: 40%;
+  }
+  .bg-wrapper .popUp .btn-ok .button-29 {
+    font-size: 1.7em;
   }
 }
 @media screen and (max-width: 460px) {
@@ -281,6 +523,20 @@ body {
   }
   .container .header {
     padding: 0 2rem;
+  }
+  .bg-wrapper .popUp .message {
+    font-size: 0.67em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp {
+    width: 45%;
+    height: 35%;
+    border-radius: 1em;
+    justify-content: space-between;
+    padding: 0.5em 0.5em;
+  }
+  .bg-wrapper .popUp .btn-ok .button-29 {
+    font-size: 1.7em;
   }
 }
 @media screen and (max-width: 405px) {
@@ -321,6 +577,13 @@ body {
     padding: 0 1rem;
   }
 }
+@media screen and (max-width: 363px) {
+  .bg-wrapper .popUp {
+    width: 48%;
+    padding: 0 0.5rem;
+    height: 40%;
+  }
+}
 @media screen and (max-width: 340px) {
   .container .pomodoro-container .pomo_action {
     width: 85%;
@@ -339,6 +602,11 @@ body {
   .container .header__left p:nth-child(2) {
     font-size: 0.6rem;
     transform: translateY(-0.7rem);
+  }
+  .bg-wrapper .popUp {
+    width: 50%;
+    padding: 0 0.5rem;
+    height: 37%;
   }
 }
 @media screen and (max-width: 280px) {
@@ -368,5 +636,21 @@ body {
   }
   .container .header__right i {
     font-size: 1.3rem;
+  }
+  .bg-wrapper .popUp {
+    width: 55%;
+    padding: 0 0.5rem;
+    height: 33%;
+  }
+  .bg-wrapper .popUp .message {
+    font-size: 0.6em;
+    margin: 0;
+  }
+  .bg-wrapper .popUp .btn-ok .button-29 {
+    font-size: 1.5em;
+  }
+  .bg-wrapper .popUp .animation-gif lord-icon {
+    width: 100px !important;
+    height: 100px !important;
   }
 }/*# sourceMappingURL=style.css.map */
