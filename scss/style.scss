@@ -259,6 +259,7 @@ body {
     transform: rotate(-360deg);
   }
 }
+
 @media screen and (max-width: 1460px) {
   .bg-wrapper .popUp .message {
     font-size: 1.5em;
@@ -297,10 +298,6 @@ body {
   .container .pomodoro-container .pomo_action {
     width: 50%;
   }
-
-  // .container .pomodoro-container .pomo_action__choice {
-  //   font-size: 0.5rem;
-  // }
 }
 @media screen and (max-width: 1095px) {
   .bg-wrapper .popUp .message {
@@ -659,7 +656,7 @@ body {
 @media screen and (max-width: 363px) {
   .bg-wrapper .popUp {
     width: 48%;
-    padding: 0 0.5rem;
+    padding: 1rem 0.5rem;
     height: 40%;
   }
 }
@@ -689,7 +686,7 @@ body {
   }
   .bg-wrapper .popUp {
     width: 50%;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     height: 37%;
   }
 }
@@ -731,7 +728,7 @@ body {
 
   .bg-wrapper .popUp {
     width: 55%;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     height: 33%;
   }
 

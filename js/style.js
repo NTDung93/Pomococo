@@ -1,13 +1,15 @@
 //initialize
 const minuteDisplay = document.querySelector(".minutes")
 const secondDisplay = document.querySelector(".seconds")
+const message = document.querySelector(".message")
+const animationGif = document.querySelector(".animation-gif")
 let initial = 1
 let pomodoro = initial
 
-let initialShort = 5
+let initialShort = 1
 let shortBreak = initialShort
 
-let initialLong = 10
+let initialLong = 1
 let longBreak = initialLong
 
 let seconds = "00"
@@ -131,8 +133,87 @@ function countDown(choice) {
 }
 
 function showPopUp(choice) {
+    if (animationGif.childElementCount >= 2) {
+        animationGif.removeChild(animationGif.lastElementChild)
+    }
+
+    if (choicState == 1) {
+        animationGif.innerHTML += `
+        <lord-icon
+        class="pomo-gif"
+        src="https://cdn.lordicon.com/tqywkdcz.json"
+        trigger="loop"
+        delay="2000"
+        colors="primary:#4bb3fd,secondary:#f28ba8,tertiary:#ffc738,quaternary:#f24c00"
+        style="width: 250px; height: 250px"
+        >
+        </lord-icon>
+      `
+        message.innerHTML = `Congratulations!!! <br />
+        You have just achieved your goal.`
+    } else if (choicState == 2) {
+        animationGif.innerHTML += ` <lord-icon
+        class="short-gif"
+        src="https://cdn.lordicon.com/mdbykuhq.json"
+        trigger="loop"
+        delay="2000"
+        colors="outline:#121331,primary:#3a3347,secondary:#ffc738,tertiary:#ebe6ef"
+        style="width: 250px; height: 250px"
+      >
+      </lord-icon>`
+        message.innerHTML = `Time's out!!! <br />
+        Let's get back to work.`
+    } else {
+        animationGif.innerHTML += `  <lord-icon
+        class="long-gif"
+        src="https://cdn.lordicon.com/osvvqecf.json"
+        trigger="loop"
+        delay="2000"
+        colors="outline:#121331,primary:#f24c00,secondary:#ebe6ef,tertiary:#4bb3fd"
+        style="width: 250px; height: 250px"
+      >
+      </lord-icon>`
+        message.innerHTML = `Time's up!!! <br />
+        Let's finish your work.`
+    }
     document.querySelector(".pomodoro-container").style.display = "none"
     document.querySelector(".bg-wrapper").style.display = "flex"
+    // removeGif()
+}
+
+function removeGif() {
+    if (choicState == 1) {
+        animationGif.innerHTML -= ` 
+            <lord-icon
+            src="https://cdn.lordicon.com/tqywkdcz.json"
+            trigger="loop"
+            delay="2000"
+            colors="primary:#4bb3fd,secondary:#f28ba8,tertiary:#ffc738,quaternary:#f24c00"
+            style="width: 250px; height: 250px"
+            >
+            </lord-icon>
+        `
+    } else if (choicState == 2) {
+        animationGif.innerHTML -= ` 
+            <lord-icon
+                src="https://cdn.lordicon.com/mdbykuhq.json"
+                trigger="loop"
+                delay="2000"
+                colors="outline:#121331,primary:#3a3347,secondary:#ffc738,tertiary:#ebe6ef"
+                style="width:250px;height:250px">
+            </lord-icon>
+        `
+    } else {
+        animationGif.innerHTML -= ` 
+            <lord-icon
+                src="https://cdn.lordicon.com/osvvqecf.json"
+                trigger="loop"
+                delay="2000"
+                colors="outline:#121331,primary:#f24c00,secondary:#ebe6ef,tertiary:#4bb3fd"
+                style="width:250px;height:250px">
+            </lord-icon>
+        `
+    }
 }
 
 function closePopUp() {

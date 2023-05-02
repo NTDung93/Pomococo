@@ -581,7 +581,7 @@ body {
 @media screen and (max-width: 363px) {
   .bg-wrapper .popUp {
     width: 48%;
-    padding: 0 0.5rem;
+    padding: 1rem 0.5rem;
     height: 40%;
   }
 }
@@ -606,7 +606,7 @@ body {
   }
   .bg-wrapper .popUp {
     width: 50%;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     height: 37%;
   }
 }
@@ -640,7 +640,7 @@ body {
   }
   .bg-wrapper .popUp {
     width: 55%;
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     height: 33%;
   }
   .bg-wrapper .popUp .message {
