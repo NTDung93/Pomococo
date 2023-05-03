@@ -3,16 +3,20 @@ const minuteDisplay = document.querySelector(".minutes")
 const secondDisplay = document.querySelector(".seconds")
 const message = document.querySelector(".message")
 const animationGif = document.querySelector(".animation-gif")
-let initial = 1
+const settingPopUp = document.querySelector(".setting-wrapper")
+
+//variable of displayed timer
+let initial = 30
 let pomodoro = initial
 
-let initialShort = 1
+let initialShort = 2
 let shortBreak = initialShort
 
-let initialLong = 1
+let initialLong = 10
 let longBreak = initialLong
 
 let seconds = "00"
+
 let runTime
 let paused = false
 let cntClickedPomo = 0
@@ -56,20 +60,38 @@ function removeActived() {
     })
 }
 
-//handle the timer
-function displayTime(choice) {
-    if (choice < 10) {
-        minuteDisplay.innerHTML = "0" + choice
-        secondDisplay.innerHTML = seconds
+function displayTime(choicState) {
+    if (choicState == 1) {
+        if (pomodoro < 10) {
+            minuteDisplay.innerHTML = "0" + pomodoro
+            secondDisplay.innerHTML = seconds
+        }
+        else {
+            minuteDisplay.innerHTML = pomodoro
+            secondDisplay.innerHTML = seconds
+        }
+    } else if (choicState == 2) {
+        if (shortBreak < 10) {
+            minuteDisplay.innerHTML = "0" + shortBreak
+            secondDisplay.innerHTML = seconds
+        }
+        else {
+            minuteDisplay.innerHTML = shortBreak
+            secondDisplay.innerHTML = seconds
+        }
+    } else if (choicState == 3) {
+        if (longBreak < 10) {
+            minuteDisplay.innerHTML = "0" + longBreak
+            secondDisplay.innerHTML = seconds
+        }
+        else {
+            minuteDisplay.innerHTML = longBreak
+            secondDisplay.innerHTML = seconds
+        }
     }
-    else {
-        minuteDisplay.innerHTML = choice
-        secondDisplay.innerHTML = seconds
-    }
-
 }
 
-displayTime(pomodoro)
+displayTime(1)
 
 function start() {
     document.querySelector(".fa-circle-play").style.display = "none"
@@ -86,49 +108,92 @@ function start() {
     if (choicState == 1 && cntClickedPomo == 1) {
         pomodoro--;
         seconds = 59
-        displayTime(pomodoro)
+        displayTime(choicState)
     } else if (choicState == 2 && cntClickedShort == 1) {
         shortBreak--;
         seconds = 59
-        displayTime(shortBreak)
+        displayTime(choicState)
     } else if (choicState == 3 && cntClickedLong == 1) {
         longBreak--;
         seconds = 59
-        displayTime(longBreak)
+        displayTime(choicState)
     }
-
 
     if (choicState == 1) {
-        runTime = setInterval(countDown, 1000, pomodoro)
+        runTime = setInterval(countDown, 1000, choicState)
     } else if (choicState == 2) {
-        runTime = setInterval(countDown, 1000, shortBreak)
+        runTime = setInterval(countDown, 1000, choicState)
     } else {
-        runTime = setInterval(countDown, 1000, longBreak)
+        runTime = setInterval(countDown, 1000, choicState)
     }
-
-
 }
 
-function countDown(choice) {
-    seconds--
-    if (seconds < 0) {
-        choice--
-        seconds = 59
-        displayTime(choice)
-    } else if (seconds < 10 && choice < 10) {
-        minuteDisplay.innerHTML = "0" + choice
-        secondDisplay.innerHTML = "0" + seconds
-    } else if (seconds < 10) {
-        minuteDisplay.innerHTML = choice
-        secondDisplay.innerHTML = "0" + seconds
-    } else {
-        displayTime(choice)
-    }
+function countDown(choicState) {
+    if (choicState == 1) {
+        seconds--
+        if (seconds < 0) {
+            pomodoro--
+            seconds = 59
+            displayTime(1)
+        } else if (seconds < 10 && pomodoro < 10) {
+            minuteDisplay.innerHTML = "0" + pomodoro
+            secondDisplay.innerHTML = "0" + seconds
+        } else if (seconds < 10) {
+            minuteDisplay.innerHTML = pomodoro
+            secondDisplay.innerHTML = "0" + seconds
+        } else {
+            displayTime(1)
+        }
 
-    if (choice < 0) {
-        showPopUp(choice)
-        clearInterval(runTime)
-        restart()
+        if (pomodoro < 0) {
+            showPopUp()
+            clearInterval(runTime)
+            restart()
+        }
+    }
+    if (choicState == 2) {
+        seconds--
+        if (seconds < 0) {
+            shortBreak--
+            seconds = 59
+            displayTime(2)
+        } else if (seconds < 10 && shortBreak < 10) {
+            minuteDisplay.innerHTML = "0" + shortBreak
+            secondDisplay.innerHTML = "0" + seconds
+        } else if (seconds < 10) {
+            minuteDisplay.innerHTML = shortBreak
+            secondDisplay.innerHTML = "0" + seconds
+        } else {
+            displayTime(2)
+        }
+
+        if (shortBreak < 0) {
+            showPopUp()
+            clearInterval(runTime)
+            restart()
+        }
+    }
+    if (choicState == 3) {
+        seconds--
+        if (seconds < 0) {
+            longBreak--
+            seconds = 59
+            displayTime(3)
+        } else if (seconds < 10 && longBreak < 10) {
+            minuteDisplay.innerHTML = "0" + longBreak
+            secondDisplay.innerHTML = "0" + seconds
+        } else if (seconds < 10) {
+            minuteDisplay.innerHTML = longBreak
+            secondDisplay.innerHTML = "0" + seconds
+        } else {
+            displayTime(3)
+        }
+
+        if (longBreak < 0) {
+            showPopUp()
+            clearInterval(runTime)
+            restart()
+        }
     }
 }
 
@@ -241,18 +306,70 @@ function restart() {
         seconds = "00"
 
         clearInterval(runTime)
-        displayTime(pomodoro)
+        displayTime(1)
     } else if (choicState == 2) {
         shortBreak = initialShort
         seconds = "00"
 
         clearInterval(runTime)
-        displayTime(shortBreak)
+        displayTime(2)
     } else {
         longBreak = initialLong
         seconds = "00"
 
         clearInterval(runTime)
-        displayTime(longBreak)
+        displayTime(3)
+    }
+}
+
+//handle setting
+function openSetting() {
+    document.querySelector(".pomodoro-container").style.display = "none"
+    settingPopUp.style.display = "flex"
+}
+
+function closeSetting() {
+    settingPopUp.style.display = "none"
+    document.querySelector(".pomodoro-container").style.display = "flex"
+}
+
+function saveChanges() {
+
+    let pomoTime = parseInt(document.getElementById("pomo-time").value)
+    let shortTime = parseInt(document.getElementById("short-time").value)
+    let longTime = parseInt(document.getElementById("long-time").value)
+    let settingAlert = document.querySelector(".setting-alert")
+
+    if (document.getElementById("pomo-time").value.length == 0 || document.getElementById("short-time").value.length == 0 || document.getElementById("long-time").value.length == 0) {
+        settingAlert.innerHTML = `* Please fill out all input fields!`
+        settingAlert.style.display = "block"
+    } else if ((pomoTime < 1 || pomoTime > 120) || (shortTime < 1 || shortTime > 5) || (longTime < 6 || longTime > 20)) {
+        settingAlert.innerHTML = `* Invalid input value! Please enter again!`
+        settingAlert.style.display = "block"
+    } else {
+        settingAlert.style.display = "none"
+
+        //re assign the value for display timer
+        initial = pomoTime
+        initialShort = shortTime
+        initialLong = longTime
+
+        pomodoro = initial
+        shortBreak = initialShort
+        longBreak = initialLong
+
+        console.log(initial);
+        console.log(initialShort);
+        console.log(initialLong);
+
+        console.log(123);
+        console.log(pomodoro);
+        console.log(shortBreak);
+        console.log(longBreak);
+
+        closeSetting()
+
+        displayTime(1)
+        document.querySelector(".pomodoro-container").style.display = "flex"
     }
 }

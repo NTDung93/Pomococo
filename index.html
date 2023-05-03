@@ -29,13 +29,62 @@
         </div>
       </div>
 
+      <div class="setting-wrapper">
+        <div class="setting-popUp">
+          <div class="setting-close">
+            <i class="fa-solid fa-xmark" onclick="closeSetting()"></i>
+          </div>
+
+          <div class="setting-title">
+            <div class="title-timer">Timers</div>
+            <div class="title-theme">Theme</div>
+          </div>
+
+          <div class="setting-body">
+            <div class="setting-timer">
+              <div class="setting-timer__pomo setting-timer__general">
+                <label for="pomo-time">Pomodoro</label>
+                <input type="number" min="1" max="120" id="pomo-time" />
+              </div>
+              <div class="setting-timer__short setting-timer__general">
+                <label for="short-time">Short Break</label>
+                <input type="number" min="1" max="5" id="short-time" />
+              </div>
+              <div class="setting-timer__long setting-timer__general">
+                <label for="long-time">Long Break</label>
+                <input type="number" min="6" max="20" id="long-time" />
+              </div>
+            </div>
+            <div class="setting-guide">
+              <p>Valid range:</p>
+              <ul>
+                <li>Pomodoro: from 1 to 120</li>
+                <li>Short Break: from 1 to 5</li>
+                <li>Long Break: from 6 to 20</li>
+              </ul>
+            </div>
+            <p class="setting-alert"></p>
+            <div class="setting-theme"></div>
+          </div>
+
+          <div class="setting-button">
+            <div class="setting-button__close" onclick="closeSetting()">
+              Close
+            </div>
+            <div class="setting-button__save" onclick="saveChanges()">
+              Save changes
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="header">
         <div class="header__left">
           <p>Pomococo</p>
           <p>By Ntd93</p>
         </div>
         <div class="header__right">
-          <i class="fa-solid fa-gear"></i>
+          <i class="fa-solid fa-gear" onclick="openSetting()"></i>
           <i class="fa-regular fa-circle-user"></i>
         </div>
       </div>

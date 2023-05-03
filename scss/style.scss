@@ -105,6 +105,8 @@ body {
       font-size: 9rem;
       width: 30%;
       justify-content: space-around;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 500;
 
       .minutes {
         width: 45%;
@@ -246,6 +248,161 @@ body {
       .button-29:active {
         box-shadow: #0a942d 0 3px 7px inset;
         transform: translateY(2px);
+      }
+    }
+  }
+}
+
+.setting-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  .setting-popUp {
+    // width: 30%;
+    width: 30rem;
+    padding: 2em 1.5em;
+    height: 60%;
+    background-color: black;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    color: white;
+    position: relative;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+
+    .setting-close {
+      display: block;
+      position: absolute;
+      top: 1.5em;
+      right: 1.5em;
+      margin-bottom: 1em;
+      i {
+        cursor: pointer;
+      }
+    }
+
+    .setting-title {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1em;
+      font-size: 1.25em;
+      height: 2em;
+      div {
+        margin-right: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.1s;
+
+        &:hover {
+          border-bottom: 3px solid white;
+        }
+      }
+    }
+
+    .setting-body {
+      width: 100%;
+      .setting-timer {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+
+        .setting-timer__general {
+          display: flex;
+          flex-direction: column;
+          width: 30%;
+          label {
+            margin-bottom: 0.25em;
+          }
+
+          input {
+            font-family: "Space Grotesk", sans-serif;
+
+            width: 100%;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.25;
+            color: #f8f9fa;
+            background-color: #000;
+            background-clip: padding-box;
+            border: 1px solid #6d6d6d;
+            appearance: none;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+          }
+        }
+      }
+
+      .setting-guide {
+        color: #b1b3b5;
+        margin-bottom: 1em;
+        ul {
+          margin-left: 2em;
+        }
+      }
+
+      .setting-alert {
+        color: rgb(255, 65, 65);
+        display: none;
+      }
+
+      .setting-theme {
+        display: none;
+      }
+    }
+
+    .setting-button {
+      position: absolute;
+      display: flex;
+      bottom: 1.5em;
+      right: 1.5em;
+      font-size: 1rem;
+      line-height: 1.25;
+      font-weight: 500;
+
+      &__close {
+        margin-right: 0.5em;
+        border-radius: 5em;
+        padding: 0.675rem 1.25rem;
+        background-color: #6c757d;
+        cursor: pointer;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &:hover {
+          background-color: #495057;
+        }
+      }
+
+      &__save {
+        border-radius: 5em;
+        padding: 0.675rem 1.25rem;
+        // background-color: #6c757d;
+        border: 1px solid #08c18a;
+        color: #08c18a;
+        cursor: pointer;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &:hover {
+          background-color: #08c18a;
+          color: white;
+        }
       }
     }
   }
