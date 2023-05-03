@@ -370,6 +370,8 @@ function saveChanges() {
         closeSetting()
 
         displayTime(1)
+        removeActived()
+        document.querySelector(".pomo").classList.add("actived")
         document.querySelector(".pomodoro-container").style.display = "flex"
     }
 }
