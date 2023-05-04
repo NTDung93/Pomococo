@@ -28,7 +28,6 @@
           </div>
         </div>
       </div>
-
       <div class="setting-wrapper">
         <div class="setting-popUp">
           <div class="setting-close">
@@ -36,23 +35,41 @@
           </div>
 
           <div class="setting-title">
-            <div class="title-timer">Timers</div>
-            <div class="title-theme">Theme</div>
+            <div class="title-timer" onclick="showSettingTimer()">Timers</div>
+            <div class="title-theme" onclick="showSettingTheme()">Theme</div>
           </div>
 
           <div class="setting-body">
             <div class="setting-timer">
               <div class="setting-timer__pomo setting-timer__general">
                 <label for="pomo-time">Pomodoro</label>
-                <input type="number" min="1" max="120" id="pomo-time" />
+                <input
+                  type="number"
+                  min="1"
+                  max="120"
+                  id="pomo-time"
+                  value="50"
+                />
               </div>
               <div class="setting-timer__short setting-timer__general">
                 <label for="short-time">Short Break</label>
-                <input type="number" min="1" max="5" id="short-time" />
+                <input
+                  type="number"
+                  min="1"
+                  max="5"
+                  id="short-time"
+                  value="5"
+                />
               </div>
               <div class="setting-timer__long setting-timer__general">
                 <label for="long-time">Long Break</label>
-                <input type="number" min="6" max="20" id="long-time" />
+                <input
+                  type="number"
+                  min="6"
+                  max="20"
+                  id="long-time"
+                  value="10"
+                />
               </div>
             </div>
             <div class="setting-guide">
@@ -63,8 +80,24 @@
                 <li>Long Break: from 6 to 20</li>
               </ul>
             </div>
+            <div class="setting-theme">
+              <label class="bg-label" for="bg-change">Choose your theme:</label>
+              <input list="bg-setting-change" id="bg-change" name="bg-change" />
+
+              <datalist id="bg-setting-change">
+                <option value="Green Forest"></option>
+                <option value="Lake and Boat"></option>
+                <option value="Rice Terraces"></option>
+                <option value="Sunset"></option>
+                <option value="Camping"></option>
+                <option value="Sky Night"></option>
+                <option value="House Among Lake"></option>
+                <option value="Girl Sight Seeing"></option>
+                <option value="Sun Flower"></option>
+                <option value="Couple Sky Night"></option>
+              </datalist>
+            </div>
             <p class="setting-alert"></p>
-            <div class="setting-theme"></div>
           </div>
 
           <div class="setting-button">
@@ -77,7 +110,6 @@
           </div>
         </div>
       </div>
-
       <div class="header">
         <div class="header__left">
           <p>Pomococo</p>
@@ -150,7 +182,6 @@
         ></iframe> -->
       </div>
     </div>
-
     <script src="/js/style.js"></script>
   </body>
 </html>

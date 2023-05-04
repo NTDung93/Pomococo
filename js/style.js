@@ -4,12 +4,14 @@ const secondDisplay = document.querySelector(".seconds")
 const message = document.querySelector(".message")
 const animationGif = document.querySelector(".animation-gif")
 const settingPopUp = document.querySelector(".setting-wrapper")
+const settingAlert = document.querySelector(".setting-alert")
+const theme = document.querySelector(".container")
 
 //variable of displayed timer
-let initial = 30
+let initial = 50
 let pomodoro = initial
 
-let initialShort = 2
+let initialShort = 5
 let shortBreak = initialShort
 
 let initialLong = 10
@@ -24,7 +26,6 @@ let cntClickedShort = 0
 let cntClickedLong = 0
 
 let choicState = 1
-
 
 //rotate the icon restart each time click
 function rotate(icon) {
@@ -329,16 +330,20 @@ function openSetting() {
 }
 
 function closeSetting() {
+    settingAlert.style.display = "none"
     settingPopUp.style.display = "none"
     document.querySelector(".pomodoro-container").style.display = "flex"
 }
+
 
 function saveChanges() {
 
     let pomoTime = parseInt(document.getElementById("pomo-time").value)
     let shortTime = parseInt(document.getElementById("short-time").value)
     let longTime = parseInt(document.getElementById("long-time").value)
-    let settingAlert = document.querySelector(".setting-alert")
+    let newTheme = document.getElementById("bg-change").value
+
+    console.log(newTheme);
 
     if (document.getElementById("pomo-time").value.length == 0 || document.getElementById("short-time").value.length == 0 || document.getElementById("long-time").value.length == 0) {
         settingAlert.innerHTML = `* Please fill out all input fields!`
@@ -358,15 +363,6 @@ function saveChanges() {
         shortBreak = initialShort
         longBreak = initialLong
 
-        console.log(initial);
-        console.log(initialShort);
-        console.log(initialLong);
-
-        console.log(123);
-        console.log(pomodoro);
-        console.log(shortBreak);
-        console.log(longBreak);
-
         closeSetting()
 
         displayTime(1)
@@ -374,4 +370,44 @@ function saveChanges() {
         document.querySelector(".pomo").classList.add("actived")
         document.querySelector(".pomodoro-container").style.display = "flex"
     }
+
+    if (newTheme == "Green Forest") {
+        theme.style.backgroundImage = "url(/img/forest-nature-scenery-4k-wallpaper-uhdpaper.com-563@0@f.jpg)"
+    } else if (newTheme == "Lake and Boat") {
+        theme.style.backgroundImage = "url(/img/boat_mountains_lake_135258_3840x2160.jpg)"
+    } else if (newTheme == "Rice Terraces") {
+        theme.style.backgroundImage = "url(/img/rice-terraces-nature-scenery-4k-wallpaper-1104a.jpg)"
+    } else if (newTheme == "Sunset") {
+        theme.style.backgroundImage = "url(/img/uhdpaper.com-download-4K-8.291-@1384915051128996593.jpg)"
+    } else if (newTheme == "Camping") {
+        theme.style.backgroundImage = "url(/img/uhdpaper.com-download-pc-4k-wallpaper-235@0@f.jpg)"
+    } else if (newTheme == "Sky Night") {
+        theme.style.backgroundImage = "url(/img/uhdpaper.com-download-pc-4k-wallpaper-399@0@f.jpg)"
+    }else if (newTheme == "House Among Lake") {
+        theme.style.backgroundImage = "url(/img/hinh-nen-ngoi-nha-ben-khu-rung-xanh-la_014047414.jpg)"
+    }else if (newTheme == "Girl Sight Seeing") {
+        theme.style.backgroundImage = "url(/img/girl-seeing.jpg)"
+    }else if (newTheme == "Sun Flower") {
+        theme.style.backgroundImage = "url(/img/sun-flower.jpg)"
+    }else if (newTheme == "Couple Sky Night") {
+        theme.style.backgroundImage = "url(/img/couple-night-sky-scenery-anime-uhdpaper.com-4K-122.jpg)"
+    }
+
+}
+
+//switch setting
+function showSettingTimer() {
+    document.querySelector(".title-theme").style.border = "none"
+    document.querySelector(".title-timer").style.borderBottom = "3px solid white"
+    document.querySelector(".setting-timer").style.display = "flex"
+    document.querySelector(".setting-guide").style.display = "block"
+    document.querySelector(".setting-theme").style.display = "none"
+}
+
+function showSettingTheme() {
+    document.querySelector(".title-timer").style.border = "none"
+    document.querySelector(".title-theme").style.borderBottom = "3px solid white"
+    document.querySelector(".setting-timer").style.display = "none"
+    document.querySelector(".setting-guide").style.display = "none"
+    document.querySelector(".setting-theme").style.display = "block"
 }

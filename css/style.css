@@ -262,6 +262,9 @@ body {
   font-size: 1.25em;
   height: 2em;
 }
+.setting-wrapper .setting-popUp .setting-title .title-timer {
+  border-bottom: 3px solid white;
+}
 .setting-wrapper .setting-popUp .setting-title div {
   margin-right: 1em;
   display: flex;
@@ -317,6 +320,10 @@ body {
 }
 .setting-wrapper .setting-popUp .setting-body .setting-theme {
   display: none;
+  margin-bottom: 1em;
+}
+.setting-wrapper .setting-popUp .setting-body .setting-theme .bg-label {
+  margin-right: 0.5em;
 }
 .setting-wrapper .setting-popUp .setting-button {
   position: absolute;

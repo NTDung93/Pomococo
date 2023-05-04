@@ -299,6 +299,11 @@ body {
       margin-bottom: 1em;
       font-size: 1.25em;
       height: 2em;
+
+      .title-timer {
+        border-bottom: 3px solid white;
+      }
+
       div {
         margin-right: 1em;
         display: flex;
@@ -363,6 +368,10 @@ body {
 
       .setting-theme {
         display: none;
+        margin-bottom: 1em;
+        .bg-label {
+          margin-right: 0.5em;
+        }
       }
     }
 
