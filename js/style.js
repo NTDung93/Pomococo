@@ -25,7 +25,7 @@ let cntClickedPomo = 0
 let cntClickedShort = 0
 let cntClickedLong = 0
 
-let choicState = 1
+let choiceState = 1
 
 //rotate the icon restart each time click
 function rotate(icon) {
@@ -43,13 +43,13 @@ choices.forEach(choice => {
         choice.classList.add("actived")
 
         if (choice.classList.contains('shortBreak')) {
-            choicState = 2
+            choiceState = 2
             restart()
         } else if (choice.classList.contains('longBreak')) {
-            choicState = 3
+            choiceState = 3
             restart()
         } else {
-            choicState = 1
+            choiceState = 1
             restart()
         }
     })
@@ -98,34 +98,34 @@ function start() {
     document.querySelector(".fa-circle-play").style.display = "none"
     document.querySelector(".fa-circle-pause").style.display = "block"
 
-    if (choicState == 1) {
+    if (choiceState == 1) {
         cntClickedPomo++
-    } else if (choicState == 2) {
+    } else if (choiceState == 2) {
         cntClickedShort++
     } else {
         cntClickedLong++
     }
 
-    if (choicState == 1 && cntClickedPomo == 1) {
+    if (choiceState == 1 && cntClickedPomo == 1) {
         pomodoro--;
         seconds = 59
-        displayTime(choicState)
-    } else if (choicState == 2 && cntClickedShort == 1) {
+        displayTime(choiceState)
+    } else if (choiceState == 2 && cntClickedShort == 1) {
         shortBreak--;
         seconds = 59
-        displayTime(choicState)
-    } else if (choicState == 3 && cntClickedLong == 1) {
+        displayTime(choiceState)
+    } else if (choiceState == 3 && cntClickedLong == 1) {
         longBreak--;
         seconds = 59
-        displayTime(choicState)
+        displayTime(choiceState)
     }
 
-    if (choicState == 1) {
-        runTime = setInterval(countDown, 1000, choicState)
-    } else if (choicState == 2) {
-        runTime = setInterval(countDown, 1000, choicState)
+    if (choiceState == 1) {
+        runTime = setInterval(countDown, 1000, choiceState)
+    } else if (choiceState == 2) {
+        runTime = setInterval(countDown, 1000, choiceState)
     } else {
-        runTime = setInterval(countDown, 1000, choicState)
+        runTime = setInterval(countDown, 1000, choiceState)
     }
 }
 
@@ -203,7 +203,7 @@ function showPopUp(choice) {
         animationGif.removeChild(animationGif.lastElementChild)
     }
 
-    if (choicState == 1) {
+    if (choiceState == 1) {
         animationGif.innerHTML += `
         <lord-icon
         class="pomo-gif"
@@ -217,7 +217,7 @@ function showPopUp(choice) {
       `
         message.innerHTML = `Congratulations!!! <br />
         You have just achieved your goal.`
-    } else if (choicState == 2) {
+    } else if (choiceState == 2) {
         animationGif.innerHTML += ` <lord-icon
         class="short-gif"
         src="https://cdn.lordicon.com/mdbykuhq.json"
@@ -248,7 +248,7 @@ function showPopUp(choice) {
 }
 
 function removeGif() {
-    if (choicState == 1) {
+    if (choiceState == 1) {
         animationGif.innerHTML -= ` 
             <lord-icon
             src="https://cdn.lordicon.com/tqywkdcz.json"
@@ -259,7 +259,7 @@ function removeGif() {
             >
             </lord-icon>
         `
-    } else if (choicState == 2) {
+    } else if (choiceState == 2) {
         animationGif.innerHTML -= ` 
             <lord-icon
                 src="https://cdn.lordicon.com/mdbykuhq.json"
@@ -302,13 +302,13 @@ function restart() {
     cntClickedShort = 0
     cntClickedLong = 0
 
-    if (choicState == 1) {
+    if (choiceState == 1) {
         pomodoro = initial
         seconds = "00"
 
         clearInterval(runTime)
         displayTime(1)
-    } else if (choicState == 2) {
+    } else if (choiceState == 2) {
         shortBreak = initialShort
         seconds = "00"
 
@@ -364,6 +364,8 @@ function saveChanges() {
 
         closeSetting()
 
+        //display the pomo in default when enter save button and close setting
+        choiceState = 1
         displayTime(1)
         removeActived()
         document.querySelector(".pomo").classList.add("actived")
