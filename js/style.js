@@ -327,6 +327,7 @@ function restart() {
 function openSetting() {
     document.querySelector(".pomodoro-container").style.display = "none"
     settingPopUp.style.display = "flex"
+    document.getElementById("bg-change").value = ""
 }
 
 function closeSetting() {
@@ -335,7 +336,6 @@ function closeSetting() {
     document.querySelector(".pomodoro-container").style.display = "flex"
 }
 
-
 function saveChanges() {
 
     let pomoTime = parseInt(document.getElementById("pomo-time").value)
@@ -343,8 +343,7 @@ function saveChanges() {
     let longTime = parseInt(document.getElementById("long-time").value)
     let newTheme = document.getElementById("bg-change").value
 
-    console.log(newTheme);
-
+    //handle time setting
     if (document.getElementById("pomo-time").value.length == 0 || document.getElementById("short-time").value.length == 0 || document.getElementById("long-time").value.length == 0) {
         settingAlert.innerHTML = `* Please fill out all input fields!`
         settingAlert.style.display = "block"
@@ -371,25 +370,36 @@ function saveChanges() {
         document.querySelector(".pomodoro-container").style.display = "flex"
     }
 
-    if (newTheme == "Green Forest") {
+    //handle theme setting
+    if (newTheme == "Green forest") {
         theme.style.backgroundImage = "url(/img/forest-nature-scenery-4k-wallpaper-uhdpaper.com-563@0@f.jpg)"
-    } else if (newTheme == "Lake and Boat") {
+    } else if (newTheme == "Lofi girl") {
+        theme.style.backgroundImage = "url(/img/lofi-girl-studying.jpg)"
+    } else if (newTheme == "Lofi coffee shop") {
+        theme.style.backgroundImage = "url(/img/lofi-coffee-shop.jpg)"
+    } else if (newTheme == "Girl and blue sky") {
+        theme.style.backgroundImage = "url(/img/girl-with-blue-sky.jpg)"
+    } else if (newTheme == "Man and cat") {
+        theme.style.backgroundImage = "url(/img/man-with-cat.jpg)"
+    } else if (newTheme == "Disc player vintage") {
+        theme.style.backgroundImage = "url(/img/vintage.jpg)"
+    } else if (newTheme == "Lake and boat") {
         theme.style.backgroundImage = "url(/img/boat_mountains_lake_135258_3840x2160.jpg)"
-    } else if (newTheme == "Rice Terraces") {
+    } else if (newTheme == "Lake and kayak") {
+        theme.style.backgroundImage = "url(/img/kayak-pov-nature-scenery-lake-national-park-montana-uhdpaper.com-4K-8.2867.jpg)"
+    } else if (newTheme == "Rice terraces") {
         theme.style.backgroundImage = "url(/img/rice-terraces-nature-scenery-4k-wallpaper-1104a.jpg)"
     } else if (newTheme == "Sunset") {
         theme.style.backgroundImage = "url(/img/uhdpaper.com-download-4K-8.291-@1384915051128996593.jpg)"
-    } else if (newTheme == "Camping") {
-        theme.style.backgroundImage = "url(/img/uhdpaper.com-download-pc-4k-wallpaper-235@0@f.jpg)"
-    } else if (newTheme == "Sky Night") {
+    } else if (newTheme == "Sky night") {
         theme.style.backgroundImage = "url(/img/uhdpaper.com-download-pc-4k-wallpaper-399@0@f.jpg)"
-    }else if (newTheme == "House Among Lake") {
+    } else if (newTheme == "House among lake") {
         theme.style.backgroundImage = "url(/img/hinh-nen-ngoi-nha-ben-khu-rung-xanh-la_014047414.jpg)"
-    }else if (newTheme == "Girl Sight Seeing") {
+    } else if (newTheme == "Girl sight seeing") {
         theme.style.backgroundImage = "url(/img/girl-seeing.jpg)"
-    }else if (newTheme == "Sun Flower") {
+    } else if (newTheme == "Sun flower") {
         theme.style.backgroundImage = "url(/img/sun-flower.jpg)"
-    }else if (newTheme == "Couple Sky Night") {
+    } else if (newTheme == "Couple sky night") {
         theme.style.backgroundImage = "url(/img/couple-night-sky-scenery-anime-uhdpaper.com-4K-122.jpg)"
     }
 
