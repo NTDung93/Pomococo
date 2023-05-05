@@ -169,6 +169,8 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  animation-name: zoom;
+  animation-duration: 0.5s;
 }
 .bg-wrapper .popUp .message {
   font-family: "Pacifico", cursive;
@@ -243,6 +245,8 @@ body {
   position: relative;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
+  animation-name: zoom;
+  animation-duration: 0.5s;
 }
 .setting-wrapper .setting-popUp .setting-close {
   display: block;
@@ -358,6 +362,14 @@ body {
   color: white;
 }
 
+@keyframes zoom {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);
