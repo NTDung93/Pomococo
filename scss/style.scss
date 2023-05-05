@@ -141,7 +141,8 @@ body {
           transition: all 0.4s;
 
           &:hover {
-            color: black;
+            // color: black;
+            transform: scale(1.1);
           }
         }
       }
@@ -155,7 +156,8 @@ body {
           animation-name: none;
 
           &:hover {
-            color: black;
+            // color: black;
+            transform: scale(1.1);
           }
         }
       }
