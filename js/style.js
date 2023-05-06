@@ -24,6 +24,9 @@ let cntClickedPlay = 0
 
 let choiceState = 1
 
+//save the previous theme
+let preTheme = "Green_forest"
+
 //rotate the icon restart each time click
 function rotate(icon) {
     icon.style.animationName = "spin"
@@ -276,8 +279,10 @@ function saveChanges() {
     }
 
     //change the theme
-    theme.style.backgroundImage = `url(/img/${newTheme}.jpg)`
+    theme.style.backgroundImage = newTheme ? `url(/img/${newTheme}.jpg)` : `url(/img/${preTheme}.jpg)`
 
+    //if theme didn't change for the previous time saving changes, new theme will still be pre theme
+    newTheme ? preTheme = newTheme : preTheme
 }
 
 //switch setting
